@@ -26,6 +26,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.axat.androidconcept.core.navigation.NavigationRoute
+import com.axat.androidconcept.ui.component.PulsateButton
 import com.axat.androidconcept.ui.component.bounceClick
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -35,73 +37,41 @@ fun HomeScreen(
 ) {
 
     Scaffold() {
-        CenterScreen()
-    }
-
-}
-
-
-@Composable
-@Preview(showBackground = true)
-fun CenterScreen() {
-
-    Column(
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.fillMaxSize()
-    ) {
-
-
         Column(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.padding(vertical = 10.dp)
-        ) {
-            Text(
-                text = "Android Topics",
-                style = TextStyle(fontSize = 24.sp, fontWeight = FontWeight.W500)
-            )
-            Divider(modifier = Modifier.padding(vertical = 10.dp), color = Color.Black)
-        }
-
-
-        Column(
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier
-                .fillMaxSize()
-                .weight(1f)
+            modifier = Modifier.fillMaxSize()
         ) {
 
-            PulsateButton("Core Topics") {
 
+            Column(
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier.padding(vertical = 10.dp)
+            ) {
+                Text(
+                    text = "Core Android",
+                    style = TextStyle(fontSize = 24.sp, fontWeight = FontWeight.W500)
+                )
+                Divider(modifier = Modifier.padding(vertical = 10.dp), color = Color.Black)
             }
 
-            Box(modifier = Modifier.height(10.dp))
 
-            PulsateButton("Fundamental Topics") {
+            Column(
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .weight(1f)
+            ) {
+
+                PulsateButton("Compose Playground") {
+                    navController.navigate(NavigationRoute.AOSP_SCREEN)
+                }
 
             }
 
         }
-
     }
 
-}
-
-@Composable
-fun PulsateButton(
-    text: String, modifier: Modifier = Modifier, onClick: () -> Unit
-) {
-    Button(
-        onClick = onClick,
-        shape = RoundedCornerShape(8.dp),
-        contentPadding = PaddingValues(horizontal = 10.dp),
-        modifier = modifier
-            .height(40.dp)
-            .width(150.dp)
-            .bounceClick()
-    ) {
-        Text(text = text, style = TextStyle())
-    }
 }
