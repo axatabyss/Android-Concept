@@ -8,4 +8,6 @@ object NavigationRoute {
 
     const val CHARTBAR_SCREEN = "chartbar_screen"
 
+    const val ANIMATION_SCREEN = "animation_screen"
+
 }

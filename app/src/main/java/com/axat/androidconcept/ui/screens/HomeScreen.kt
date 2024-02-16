@@ -82,6 +82,12 @@ fun HomeScreen(
                     navController.navigate(NavigationRoute.CHARTBAR_SCREEN)
                 }
 
+                Spacer(modifier = modifier.height(20.dp))
+
+                PulsateButton("Animation Particles") {
+                    navController.navigate(NavigationRoute.ANIMATION_SCREEN)
+                }
+
             }
 
         }
