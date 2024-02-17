@@ -9,7 +9,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.axat.androidconcept.ui.theme.AndroidConceptTheme
-import com.axat.androidconcept.core.navigation.NavigationGraph
+import com.axat.androidconcept.navigation.NavigationGraph
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,10 +20,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-
-                    val navController = rememberNavController()
-                    NavigationGraph(navController)
-
+                    NavigationGraph()
                 }
             }
         }
