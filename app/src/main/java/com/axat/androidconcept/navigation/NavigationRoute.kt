@@ -10,4 +10,6 @@ object NavigationRoute {
 
     const val ANIMATION_SCREEN = "animation_screen"
 
+    const val PARTICLE_ANIMATION_SCREEN = "particle_animation_screen"
+
 }

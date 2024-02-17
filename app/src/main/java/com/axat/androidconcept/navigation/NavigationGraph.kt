@@ -8,6 +8,7 @@ import androidx.navigation.compose.rememberNavController
 import com.axat.androidconcept.ui.screens.AnimationScreen
 import com.axat.androidconcept.ui.screens.ChartBarScreen
 import com.axat.androidconcept.ui.screens.HomeScreen
+import com.axat.androidconcept.ui.screens.ParticleAnimationScreen
 import com.axat.androidconcept.ui.screens.ShapesScreen
 
 
@@ -36,6 +37,10 @@ fun NavigationGraph() {
 
         composable(NavigationRoute.ANIMATION_SCREEN) {
             AnimationScreen()
+        }
+
+        composable(NavigationRoute.PARTICLE_ANIMATION_SCREEN) {
+            ParticleAnimationScreen()
         }
 
     }

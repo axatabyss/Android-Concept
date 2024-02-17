@@ -84,8 +84,14 @@ fun HomeScreen(
 
                 Spacer(modifier = modifier.height(20.dp))
 
-                PulsateButton("Animation Particles") {
+                PulsateButton("Moving Animation") {
                     navController.navigate(NavigationRoute.ANIMATION_SCREEN)
+                }
+
+                Spacer(modifier = modifier.height(20.dp))
+
+                PulsateButton("Particles Animation") {
+                    navController.navigate(NavigationRoute.PARTICLE_ANIMATION_SCREEN)
                 }
 
             }
